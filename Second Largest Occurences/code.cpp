@@ -14,6 +14,9 @@ int findSecondLargest(const vector<int>& nums) {
             secondLargest = num;
         }
     }
+    if(secondLargest ==INT_MIN){
+        return 0;                    //base case , identical elements
+    }
     return secondLargest;
 }
 
@@ -38,6 +41,9 @@ int main() {
     // 1st step: find the second largest element
     int secondLargest = findSecondLargest(nums);
     // 1st step: find the second largest element occurences
+    if(secondLargest==0){
+        return 0;
+    }
     int count = findOccurrenceOfSecondLargest(secondLargest, nums);
     cout << count << endl;
 
